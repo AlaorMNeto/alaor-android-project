@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "181203319505",
+    "project_id": "projeto-alaor-neto-imepac",
+    "storage_bucket": "projeto-alaor-neto-imepac.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:181203319505:android:3f4edace9ef01d71b8e3f0",
+        "android_client_info": {
+          "package_name": "br.com.faculdade.imepac"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC0lkWyyXzFfg3XiXskXIQZPDi7VB7xQY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
