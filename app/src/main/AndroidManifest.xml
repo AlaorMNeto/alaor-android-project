@@ -17,9 +17,9 @@
             android:exported="false"
             android:theme="@style/AppTheme"/>
         <activity
-            android:name=".Tela_Perfil"
+            android:name=".TelaPerfil"
             android:exported="false"
-            android:theme="@style/Theme.Imepac" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".FormCadastro"
             android:exported="false"

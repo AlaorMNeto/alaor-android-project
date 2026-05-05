@@ -52,7 +52,7 @@ class FormLogin : AppCompatActivity() {
                 progressBar.visibility = View.GONE
 
                 val user = FirebaseAuth.getInstance().currentUser
-                val intent = Intent(this@FormLogin, TelaPrincipal::class.java)
+                val intent = Intent(this@FormLogin, TelaPerfil::class.java)
                 startActivity(intent)
                 finish() //Finaliza a atividade atual para que o usuário não possa voltar para ela
             } else {
