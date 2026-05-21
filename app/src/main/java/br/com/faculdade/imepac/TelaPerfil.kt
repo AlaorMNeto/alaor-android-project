@@ -19,6 +19,7 @@ class TelaPerfil : AppCompatActivity() {
         setContentView(R.layout.activity_tela_perfil)
         supportActionBar?.hide();
         IniciarComponentes();
+        fetchAllNames();
         db = FirebaseFirestore.getInstance()
         bt_sair.setOnClickListener {
             FirebaseAuth.getInstance().signOut();
@@ -27,9 +28,55 @@ class TelaPerfil : AppCompatActivity() {
             finish();
         }
     }
+
+    override fun onStart() {
+        super.onStart()
+        val userEmail = FirebaseAuth.getInstance().currentUser?.email
+        emailUser.setText(userEmail)
+        if (userEmail != null) {
+            buscarNomeDoEmail(userEmail)
+        }
+    }
+
+    fun buscarNomeDoEmail(email: String) {
+        val usuariosRef = db.collection("Usuarios")
+        val query = usuariosRef.whereEqualTo("email", email)
+
+        query.get()
+            .addOnSuccessListener { querySnapshot ->
+                if (!querySnapshot.isEmpty) {
+                    val documento = querySnapshot.documents[0]
+                    val nome = documento.getString("nome")
+                    if (nome != null) {
+                        usuarioUser.setText(nome)
+                    } else {
+                        println("Nome não encontrado para o e-mail $email")
+                    }
+                } else {
+                    println("Nenhum documento encontrado para o e-mail $email")
+                }
+            }
+            .addOnFailureListener { e ->
+                println("Erro ao buscar documento: $e")
+            }
+    }
+
     fun IniciarComponentes() {
         emailUser = findViewById(R.id.textEmailUser)
         usuarioUser = findViewById(R.id.textNomeUser)
         bt_sair = findViewById(R.id.bt_sair)
     }
+}
+fun fetchAllNames() {
+        val db = FirebaseFirestore.getInstance()
+        val usuariosRef = db.collection("usuarios")
+
+        usuariosRef.get().addOnSuccessListener { querySnapshot ->
+            for (document in querySnapshot.documents) {
+                val nome = document.getString("nome")
+                println("Nome: $nome")
+            }
+        }.addOnFailureListener { exception ->
+            println("Erro ao buscar os nomes: ${exception.message}")
+        }
 }
