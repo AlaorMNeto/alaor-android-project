@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">Imepac</string>
+    <string name="app_name">TicketWave</string>
     <string name="entrar">Entrar</string>
     <string name="text_cadastro">Crie uma conta clicando aqui!</string>
     <string name="cadastro">Cadastrar</string>
+    <string name="title_activity_splash.xml">activity_splash.xml</string>
 </resources>

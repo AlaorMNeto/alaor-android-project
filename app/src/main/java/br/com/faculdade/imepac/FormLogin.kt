@@ -49,7 +49,7 @@ class FormLogin : AppCompatActivity() {
 
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, senha).addOnCompleteListener() { task ->
             if (task.isSuccessful) {
-                progressBar.visibility = View.GONE
+                progressBar.visibility = View.VISIBLE
 
                 val user = FirebaseAuth.getInstance().currentUser
                 val intent = Intent(this@FormLogin, TelaPerfil::class.java)
