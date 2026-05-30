@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".FormCadastroEvento">
+
+    <TextView
+        android:id="@+id/title_cadastro_evento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Novo Evento"
+        android:textColor="@color/orange"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/container_components_evento"
+        style="@style/ContainerComponents"
+        android:layout_width="371dp"
+        android:layout_height="320dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_cadastro_evento" />
+
+    <EditText
+        android:id="@+id/edit_nome_evento"
+        style="@style/Edit_Text"
+        android:hint="Nome do Evento"
+        android:inputType="textCapWords"
+        app:layout_constraintTop_toTopOf="@id/container_components_evento"
+        app:layout_constraintStart_toStartOf="@id/container_components_evento"
+        app:layout_constraintEnd_toEndOf="@id/container_components_evento" />
+
+    <EditText
+        android:id="@+id/edit_local_evento"
+        style="@style/Edit_Text"
+        android:hint="Local / Estádio / Teatro"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/edit_nome_evento"
+        app:layout_constraintStart_toStartOf="@id/container_components_evento"
+        app:layout_constraintEnd_toEndOf="@id/container_components_evento" />
+
+    <EditText
+        android:id="@+id/edit_data_evento"
+        style="@style/Edit_Text"
+        android:hint="Data (DD/MM/AAAA)"
+        android:inputType="date"
+        app:layout_constraintTop_toBottomOf="@id/edit_local_evento"
+        app:layout_constraintStart_toStartOf="@id/container_components_evento"
+        app:layout_constraintEnd_toEndOf="@id/container_components_evento" />
+
+    <EditText
+        android:id="@+id/edit_preco_evento"
+        style="@style/Edit_Text"
+        android:layout_marginTop="8dp"
+        android:hint="Preço do Ingresso (R$)"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@id/container_components_evento"
+        app:layout_constraintStart_toStartOf="@id/container_components_evento"
+        app:layout_constraintTop_toBottomOf="@id/edit_data_evento" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_salvar_evento"
+        style="@style/button"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="Salvar Evento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_components_evento" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

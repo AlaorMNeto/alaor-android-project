@@ -25,7 +25,7 @@ class SplashActivity : AppCompatActivity() {
         if (usuarioAtual != null) {
             // Se o usuário já está logado de outra vez, vai direto para o Menu/Dashboard
             // (Substitua 'FormLogin' por sua futura classe de Menu/Dashboard quando criá-la)
-            val intent = Intent(this, FormLogin::class.java)
+            val intent = Intent(this, TelaPrincipal::class.java)
             startActivity(intent)
         } else {
             // Se não está logado, vai para a tela de Login

@@ -2,20 +2,87 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main" android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".TelaPrincipal">
+
+    <ImageView
+        android:id="@+id/logo_principal"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="Logo TicketWave"
+        android:src="@drawable/logo_site_ticketwave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/title_tela_principal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tela Principal"
-        android:textSize="50sp"
+        android:layout_marginTop="16dp"
+        android:text="TicketWave"
+        android:textColor="@color/white"
+        android:textSize="32sp"
         android:textStyle="bold"
-        android:layout_marginTop="100dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo_principal" />
+
+    <TextView
+        android:id="@+id/subtitle_principal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Painel de Controle de Eventos"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_tela_principal" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subtitle_principal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_ir_cadastro_evento"
+            style="@style/button"
+            android:layout_width="303dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0dp"
+            android:gravity="center"
+            android:text="Cadastrar Novo Evento" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_ir_lista_eventos"
+            style="@style/button"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Visualizar Eventos" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_sair"
+            style="@style/button"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Sair da Conta"
+            android:textColor="#FF4D4D" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
